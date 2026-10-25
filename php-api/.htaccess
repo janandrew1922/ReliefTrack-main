@@ -1,0 +1,19 @@
+SetEnv RELIEF_MAIL_FROM janandrew1922@gmail.com
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.+\.php)$ index.php [L,QSA]
+
+<IfModule mod_setenvif.c>
+	SetEnvIf Origin "^https?://(localhost|127\.0\.0\.1)(:[0-9]+)?$" CORS_ORIGIN=$0
+</IfModule>
+
+<IfModule mod_headers.c>
+	Header always set Access-Control-Allow-Origin "%{CORS_ORIGIN}e" env=CORS_ORIGIN
+	Header always set Access-Control-Allow-Credentials "true" env=CORS_ORIGIN
+	Header always set Access-Control-Allow-Headers "Content-Type, X-CSRF-Token" env=CORS_ORIGIN
+	Header always set Access-Control-Allow-Methods "GET, POST, OPTIONS" env=CORS_ORIGIN
+	Header always set Vary "Origin"
+	Header always set X-Content-Type-Options "nosniff"
+	Header always set X-Frame-Options "DENY"
+	Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

@@ -1,0 +1,66 @@
+/* @import url() FONT IMPORTS MUST ALWAYS BE AT THE VERY TOP OF THIS FILE, ABOVE THE TAILWIND IMPORTS — DO NOT DELETE THIS COMMENT */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* CRITICAL: THE FOLLOWING TAILWIND IMPORTS MUST NEVER BE DELETED OR REORDERED — DO NOT DELETE THIS COMMENT */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* END TAILWIND IMPORTS — ALL OTHER CSS MUST GO BELOW THIS LINE */
+
+:root {
+  --bg: #f5f7f6;
+  --surface: #ffffff;
+  --ink: #0f2e2a;
+  --muted: #5b716d;
+  --line: #e3ebe8;
+  --brand: #0f766e;
+  --brand-soft: #ccfbf1;
+}
+html, body, #root {
+  height: 100%;
+}
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: #cdd9d5; border-radius: 999px; border: 2px solid var(--bg); }
+::-webkit-scrollbar-thumb:hover { background: #b3c4bf; }
+.relief-map-marker {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 9999px;
+  color: white;
+  border: 3px solid white;
+  box-shadow: 0 4px 12px rgba(15, 46, 42, 0.3);
+}
+.relief-map-marker--donation_center { background: #0f766e; }
+.relief-map-marker--warehouse { background: #7c3aed; }
+.relief-map-marker--distribution_center { background: #d97706; }
+.relief-map-marker--evacuation_center { background: #e11d48; }
+.relief-map-marker--affected_area { background: #b91c1c; }
+.relief-map-marker--other { background: #64748b; }
+.relief-map-marker--vehicle { background: #2563eb; }
+.shipment-track-pin {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border: 2px solid white;
+  border-radius: 9999px;
+  color: white;
+  font-size: 11px;
+  font-weight: 800;
+  box-shadow: 0 2px 8px rgb(15 23 42 / 35%);
+}
+.shipment-track-pin--pickup { background: #0f766e; }
+.shipment-track-pin--destination { background: #d97706; }
+.shipment-track-pin--driver { width: 38px; height: 38px; background: #2563eb; font-size: 19px; }
+.leaflet-container { font-family: 'Inter', system-ui, sans-serif; }
+.leaflet-popup-content-wrapper { border-radius: 12px; box-shadow: 0 8px 24px rgba(15, 46, 42, 0.14); }
+.leaflet-popup-content { margin: 12px 14px; }
